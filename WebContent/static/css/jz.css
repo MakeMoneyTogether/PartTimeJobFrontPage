@@ -1,0 +1,81 @@
+.placeholder {
+	margin: 0;
+	padding: 1px 10px;
+	background-color: #efeff4;
+	height: 2.2em;
+	line-height: 2.3em;
+	text-align: center;
+	position:relative;
+	color: #010101;
+	font-size: 1.2em;
+}
+.placeselect{
+	/*margin-top: 1%;*/
+	/*height: 2.2em;*/
+	padding: 5px;
+	text-align: center;
+	position:relative;
+	color: #010101;
+	font-size: 1.3em;
+}
+.swiper-container {
+	width: 100%;
+} 
+
+.swiper-container img {
+	display: block;
+	width: 100%;
+}
+.i-circle{
+	width: 70%;
+	height: 70%;
+	margin-top: 15%;
+	border-radius:50%;
+	background-color: #7D4F9E;
+	font-size: 1em;
+	font-weight: bold;
+	color: #ffffff;
+	line-height: 260%;
+}
+.i-jz{
+	line-height: 15px;
+	margin-left: -2%;
+}
+.i-jz-title{
+	font-size: 15px;
+}
+.i-jz-desc{
+	font-size: 12px;
+}
+.i-jz-money{
+	font-size: 13px;
+	color: #ff0000;
+}
+.i-jz-date{
+	font-size: 13px;
+	float: right;
+}
+.weui-form-preview__item > span{
+	color: black;
+	float: left;
+}
+.info-desc{
+	float: left;
+	line-height:1.5;
+	text-align:left;
+}
+.checkDiv{
+	padding-left: 5%;
+}
+.checkBtn{
+	color: #0f0f0f;
+	margin-top: 0 !important; 
+	margin-left: 5px;
+}
+.checkBtnActive{
+	background-color: #83FCD8;
+}
+.commitBtn{
+	background-color: #1AAd19;
+	margin-bottom: 5%;
+}
