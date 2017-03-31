@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>大学生课外管理系统</title>
+<title>兼职</title>
 <base href="<%=basePath%>">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <link rel="stylesheet" href="static/css/weui.min.css">
@@ -80,18 +80,6 @@
 				选择区域
 			</div>
 			<div id="districts" class="weui-panel__bd checkDiv">
-				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
-				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
-				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
-				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
-				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
-				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
-				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
-				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
-				<br>
-				<button class="weui-btn weui-btn_mini commitBtn">筛选</button>
-				<br>
-				<div class="weui-panel__hd" style="padding:0;"></div>
 
 			</div>
 		</div>
@@ -100,18 +88,6 @@
 				选择类型
 			</div>
 			<div id="labels" class="weui-panel__bd checkDiv">
-				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁宁</span>
-				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁宁</span>
-				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁宁</span>
-				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁宁</span>
-				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁宁</span>
-				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁宁</span>
-				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁宁</span>
-				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
-				<br>
-				<button class="weui-btn weui-btn_mini commitBtn">筛选</button>
-				<br>
-				<div class="weui-panel__hd" style="padding:0;"></div>
 
 			</div>
 		</div>
@@ -120,14 +96,13 @@
 				选择时间
 			</div>
 			<div class="weui-panel__bd checkDiv">
-				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
-				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
-				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
-				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
-				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
-				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
-				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
-				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
+				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" value="all">不限时间</span><br><br>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label for="" class="weui-label">兼职日期</label></div>
+					<div class="weui-cell__bd">
+						<input id="jzstdate" class="weui-input" style="background:#bdbdbd;" type="date" value="">
+					</div>
+				</div>
 				<br>
 				<button class="weui-btn weui-btn_mini commitBtn">筛选</button>
 				<br>
@@ -215,6 +190,11 @@
 			</div>
 		</div>
 	</div>
+<div style="display:hide;">
+<div id="dises_bak"></div>
+<div id="labels_bak"></div>
+<div id="dates_bak"></div>
+</div>	
 <script src="static/js/jquery-2.1.4.js"></script>
 <script src="static/js/fastclick.js"></script>
 <script src="static/js/jquery-weui.min.js"></script>
