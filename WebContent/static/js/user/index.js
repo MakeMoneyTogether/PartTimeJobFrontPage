@@ -27,7 +27,22 @@ function loadm(){
 	if(loading) return;
 	loading = true;
 	setTimeout(function() {
-		$("#jz-infos").append(genItem);
+		dises = dises_bak.html();
+		labels = labels_bak.html();
+		dates = dates_bak.html();
+		data = {dises:dises,labels:labels,dates:dates};
+		$.ajax({
+			type: "POST",
+			url: "jzurl/pages/0/3",
+			dataType: "json",
+			data: data,
+			success:function(data){
+				for(i=0;i<data.length;i++){
+					domhtml = genItem(data[i]);
+					$('#jz-infos').append(domhtml);
+				}
+			}
+		});
 		loading = false;
 	}, 1000);  
 }
@@ -141,5 +156,15 @@ function freshList(){
 	dises_bak.html(dises);
 	labels_bak.html(labels);
 	dates_bak.html(dates);
-	alert(dises+'\n'+labels+'\n'+dates);
+	$('#slocal').hide();
+	$('#stype').hide();
+	$('#stime').hide();
+	onLoad();
+}
+function localset(){
+	$.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function(data){
+	    console.log(remote_ip_info.city);
+	    $('#ncity').html(remote_ip_info.city);
+	    alert(remote_ip_info.city);
+	});
 }

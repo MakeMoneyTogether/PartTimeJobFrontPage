@@ -212,6 +212,7 @@
 		loop: true,
 		autoplay: 2000,
 	});
+	localset();
 	getDistrict();
 	getLabels();
 	onLoad();
