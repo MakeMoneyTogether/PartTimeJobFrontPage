@@ -190,10 +190,11 @@
 			</div>
 		</div>
 	</div>
-<div style="display:hide;">
-<div id="dises_bak"></div>
-<div id="labels_bak"></div>
-<div id="dates_bak"></div>
+<div style="display:none;">
+<div id="dises_bak">all</div>
+<div id="labels_bak">all</div>
+<div id="dates_bak">all</div>
+<div id="index_bak">0</div>
 </div>	
 <script src="static/js/jquery-2.1.4.js"></script>
 <script src="static/js/fastclick.js"></script>
@@ -213,6 +214,7 @@
 	});
 	getDistrict();
 	getLabels();
+	onLoad();
 </script>
 </body>
 </html>

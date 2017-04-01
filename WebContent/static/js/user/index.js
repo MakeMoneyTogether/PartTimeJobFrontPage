@@ -1,3 +1,8 @@
+var dises_bak = $('#dises_bak')
+var labels_bak = $('#labels_bak')
+var dates_bak = $('#dates_bak')
+var loading = false;
+
 function onCheckBtn(){
 	$('.checkBtn').unbind();
 	$('.checkBtn').click(function(){
@@ -11,16 +16,43 @@ function onCheckBtn(){
 	$('.commitBtn').click(freshList);
 }
 
-var loading = false;
+function genItem(one){
+	var item = '<a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg"><div class="weui-media-box__hd"><div class="i-circle">'+
+				one.jlabel+'</div></div><div class="weui-media-box__bd i-jz"><span class="weui-media-box__title i-jz-title">'+
+				one.jname+'</span><br><span class="i-jz-desc">'+one.jlocal+' '+one.jstdate+'开始</span><br><span class="i-jz-money">'+
+				one.jmoney+'元/'+one.jtime+'</span></div></a>';
+	return item;
+}
 function loadm(){
 	if(loading) return;
 	loading = true;
 	setTimeout(function() {
-	$("#jz-infos").append('<a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg"><div class="weui-media-box__hd"><div class="i-circle">类型</div></div><div class="weui-media-box__bd i-jz"><span class="weui-media-box__title i-jz-title">标题一</span><br><span class="i-jz-desc">江宁 5月1日开始（共10天）</span><br><span class="i-jz-money">100元/天</span><span class="i-jz-date">4分钟前</span></div></a>');
-	loading = false;
+		$("#jz-infos").append(genItem);
+		loading = false;
 	}, 1000);  
 }
 $(document.body).infinite().on("infinite",loadm);
+
+
+function onLoad(){
+	dises = dises_bak.html();
+	labels = labels_bak.html();
+	dates = dates_bak.html();
+	data = {dises:dises,labels:labels,dates:dates};
+	$('#jz-infos').html('');
+	$.ajax({
+		type: "POST",
+		url: "jzurl/pages/0/6",
+		dataType: "json",
+		data: data,
+		success:function(data){
+			for(i=0;i<data.length;i++){
+				domhtml = genItem(data[i]);
+				$('#jz-infos').append(domhtml);
+			}
+		}
+	});
+}
 
 $("#plocal").click(function(){
 	$('#slocal').toggle();
@@ -106,8 +138,8 @@ function freshList(){
 			dates = time;
 		}
 	}
+	dises_bak.html(dises);
+	labels_bak.html(labels);
+	dates_bak.html(dates);
 	alert(dises+'\n'+labels+'\n'+dates);
-	console.log(dises);
-	console.log(labels);
-	console.log(dates);
 }
