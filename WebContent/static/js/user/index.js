@@ -164,7 +164,16 @@ function freshList(){
 function localset(){
 	$.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function(data){
 	    console.log(remote_ip_info.city);
-	    $('#ncity').html(remote_ip_info.city);
-	    alert(remote_ip_info.city);
+	    if(remote_ip_info.city == ''){
+	    	$('#ncity').html(remote_ip_info.province);
+	    }
+	    else{
+	    	$('#ncity').html(remote_ip_info.city);
+	    }
 	});
+}
+function setLocal(){
+	cc = $('#city-picker');
+	city = cc.val().split(' ')[1];
+	$('#ncity').html(city);
 }

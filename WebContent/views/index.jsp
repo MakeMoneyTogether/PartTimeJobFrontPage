@@ -18,7 +18,7 @@
 </head>
 <body ontouchstart>
 	<div class="weui-flex">
-		<div class="placeholder"><a id="ncity" value="0" href="#">南京</a></div>
+		<div class="placeholder"><a id="ncity" value="0" href="javascript:;" class="open-popup" data-target="#localSelect">南京</a></div>
 		<div class="weui-flex__item">
 			<div class="weui-search-bar" id="searchBar">
 				<form class="weui-search-bar__form">
@@ -189,6 +189,26 @@
 				<span class="weui-loadmore__tips">正在加载</span>
 			</div>
 		</div>
+		<div id="localSelect" class="weui-popup__container">
+			<div class="weui-popup__overlay"></div>
+			<div class="weui-popup__modal">
+				<div class="weui-form-preview__hd">
+					<div class="weui-form-preview__item">
+						<label class="weui-form-preview__label"></label>
+						<span class="weui-form-preview__value">选择城市</span>
+					</div>
+				</div>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label for="name" class="weui-label">城市</label></div>
+					<div class="weui-cell__bd">
+					  <input class="weui-input" id="city-picker" type="text">
+					</div>
+				  </div>
+				<br>
+				<a href="javascript:;" onclick="setLocal();" class="weui-btn weui-btn_mini weui-btn_primary close-popup" style="width:80%;margin-left:10%;">提交</a>
+				<a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_primary close-popup" style="width:80%;margin-left:10%;">关闭</a>
+			</div>
+		</div>
 	</div>
 <div style="display:none;">
 <div id="dises_bak">all</div>
@@ -201,6 +221,7 @@
 <script src="static/js/jquery-weui.min.js"></script>
 <script src="static/js/swiper.min.js"></script>
 <script src="static/js/user/index.js"></script>
+<script type="text/javascript" src="static/js/city-picker.min.js" charset="utf-8"></script>
 <script type="text/javascript">
 
 </script>
@@ -216,6 +237,11 @@
 	getDistrict();
 	getLabels();
 	onLoad();
+	$("#city-picker").cityPicker({
+		showDistrict: false
+	});
+	
+	
 </script>
 </body>
 </html>
