@@ -30,7 +30,8 @@ function loadm(){
 		dises = dises_bak.html();
 		labels = labels_bak.html();
 		dates = dates_bak.html();
-		data = {dises:dises,labels:labels,dates:dates};
+		city = $('#ncity')
+		data = {dises:dises,labels:labels,dates:dates,city:city};
 		$.ajax({
 			type: "POST",
 			url: "jzurl/pages/0/3",
@@ -53,7 +54,8 @@ function onLoad(){
 	dises = dises_bak.html();
 	labels = labels_bak.html();
 	dates = dates_bak.html();
-	data = {dises:dises,labels:labels,dates:dates};
+	city = $('#ncity').html();
+	data = {dises:dises,labels:labels,dates:dates,city:city};
 	$('#jz-infos').html('');
 	$.ajax({
 		type: "POST",

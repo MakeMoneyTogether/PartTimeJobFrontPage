@@ -18,10 +18,11 @@ public class JZController {
 	
 	@ResponseBody
 	@RequestMapping("pages/{offset}/{length}")
-	public List<JZItem> pages(@PathVariable int offset,@PathVariable int length,String dises,String labels,String dates){
+	public List<JZItem> pages(@PathVariable int offset,@PathVariable int length,String dises,String labels,String dates,String city){
 		System.out.println(dises);
 		System.out.println(labels);
 		System.out.println(dates);
+		System.out.println(city);
 
 		String disesall[] = {"江宁区","鼓楼区","浦口区","六合区","栖霞区","高淳区","路口区","仙林区"};
 		String labelsall[] = {"发单","销售","家教","调研","客服"};
