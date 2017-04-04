@@ -13,6 +13,11 @@ public class PageController {
 		return "index";
 	}
 	
+	@RequestMapping("test")
+	public String test(){
+		return "test";
+	}
+	
 	@RequestMapping("restful")
 	@ResponseBody
 	public String restful(){

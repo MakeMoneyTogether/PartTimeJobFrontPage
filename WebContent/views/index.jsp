@@ -18,7 +18,7 @@
 </head>
 <body ontouchstart>
 	<div class="weui-flex">
-		<div class="placeholder"><a id="ncity" value="0" href="javascript:;" class="open-popup" data-target="#localSelect">南京</a></div>
+		<div class="placeholder"><a id="ncity" value="320100" href="javascript:;" class="open-popup" data-target="#localSelect">南京市</a></div>
 		<div class="weui-flex__item">
 			<div class="weui-search-bar" id="searchBar">
 				<form class="weui-search-bar__form">

@@ -164,13 +164,13 @@ function freshList(){
 	onLoad();
 }
 function localset(){
-	$.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function(data){
-	    console.log(remote_ip_info.city);
-	    if(remote_ip_info.city == ''){
-	    	$('#ncity').html(remote_ip_info.province);
-	    }
-	    else{
-	    	$('#ncity').html(remote_ip_info.city);
+	$.getScript('http://pv.sohu.com/cityjson?ie=utf-8', function(data){
+	    console.log(returnCitySN.cip);
+	    cname = returnCitySN.cname.replace(/.*[省|自治区]/,'');
+	    if(cname == ''){
+	    	alert('定位失败，请手动选择!');
+	    }else{
+		    $('#ncity').html(cname);
 	    }
 	});
 }
@@ -178,4 +178,5 @@ function setLocal(){
 	cc = $('#city-picker');
 	city = cc.val().split(' ')[1];
 	$('#ncity').html(city);
+	$('#ncity').attr('value',cc.attr('data-code'));
 }
