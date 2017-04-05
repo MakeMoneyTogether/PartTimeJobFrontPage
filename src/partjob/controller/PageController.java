@@ -17,6 +17,10 @@ public class PageController {
 	public String test(){
 		return "test";
 	}
+	@RequestMapping("list")
+	public String list(){
+		return "list";
+	}
 	
 	@RequestMapping("restful")
 	@ResponseBody
