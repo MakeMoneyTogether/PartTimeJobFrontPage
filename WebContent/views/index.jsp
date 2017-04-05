@@ -148,6 +148,7 @@
 <script src="static/js/fastclick.js"></script>
 <script src="static/js/jquery-weui.min.js"></script>
 <script src="static/js/swiper.min.js"></script>
+<script src="static/js/jquery.cookie.js"></script>
 <script src="static/js/user/index.js"></script>
 <script type="text/javascript" src="static/js/city-picker.min.js" charset="utf-8"></script>
 <script type="text/javascript">

@@ -30,7 +30,7 @@ function loadm(){
 		dises = dises_bak.html();
 		labels = labels_bak.html();
 		dates = dates_bak.html();
-		city = $('#ncity')
+		city = $('#ncity').html();
 		data = {dises:dises,labels:labels,dates:dates,city:city};
 		$.ajax({
 			type: "POST",
@@ -179,4 +179,5 @@ function setLocal(){
 	city = cc.val().split(' ')[1];
 	$('#ncity').html(city);
 	$('#ncity').attr('value',cc.attr('data-code'));
+	$.cookie('citycode',cc.attr('data-code'),{expires:30,path:'/'});
 }
