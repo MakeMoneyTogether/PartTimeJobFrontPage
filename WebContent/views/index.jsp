@@ -25,14 +25,13 @@
 					<div class="weui-search-bar__box">
 					<i class="weui-icon-search"></i>
 						<input type="search" class="weui-search-bar__input" id="searchInput" placeholder="搜索" required="">
-						<a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
 					</div>
 					<label class="weui-search-bar__label" id="searchText" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
 						<i class="weui-icon-search"></i>
 						<span>搜索</span>
 					</label>
 				</form>
-				<a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+				<a onclick="searchText();" class="weui-search-bar__cancel-btn" id="searchBtn">搜索</a>
 			</div>
 
 		</div>
@@ -112,77 +111,6 @@
 		</div>
 		<div class="weui-panel__bd" id="jz-all">
 			<div id="jz-infos">
-			<a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-				<div class="weui-media-box__hd"><div class="i-circle">
-					类型
-				</div></div>
-				<div class="weui-media-box__bd i-jz">
-				<span class="weui-media-box__title i-jz-title">标题一</span><br>
-				<span class="i-jz-desc">江宁 5月1日开始（共10天）</span><br>
-				<span class="i-jz-money">100元/天</span>
-				<span class="i-jz-date">4分钟前</span>
-				</div>
-			</a>
-
-			<a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-				<div class="weui-media-box__hd"><div class="i-circle">
-					类型
-				</div></div>
-				<div class="weui-media-box__bd i-jz">
-				<span class="weui-media-box__title i-jz-title">标题一</span><br>
-				<span class="i-jz-desc">江宁 5月1日开始（共10天）</span><br>
-				<span class="i-jz-money">100元/天</span>
-				<span class="i-jz-date">4分钟前</span>
-				</div>
-			</a>
-
-			<a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-				<div class="weui-media-box__hd"><div class="i-circle">
-					类型
-				</div></div>
-				<div class="weui-media-box__bd i-jz">
-				<span class="weui-media-box__title i-jz-title">标题一</span><br>
-				<span class="i-jz-desc">江宁 5月1日开始（共10天）</span><br>
-				<span class="i-jz-money">100元/天</span>
-				<span class="i-jz-date">4分钟前</span>
-				</div>
-			</a>
-
-			<a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-				<div class="weui-media-box__hd"><div class="i-circle">
-					类型
-				</div></div>
-				<div class="weui-media-box__bd i-jz">
-				<span class="weui-media-box__title i-jz-title">标题一</span><br>
-				<span class="i-jz-desc">江宁 5月1日开始（共10天）</span><br>
-				<span class="i-jz-money">100元/天</span>
-				<span class="i-jz-date">4分钟前</span>
-				</div>
-			</a>
-
-			<a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-				<div class="weui-media-box__hd"><div class="i-circle">
-					类型
-				</div></div>
-				<div class="weui-media-box__bd i-jz">
-				<span class="weui-media-box__title i-jz-title">标题一</span><br>
-				<span class="i-jz-desc">江宁 5月1日开始（共10天）</span><br>
-				<span class="i-jz-money">100元/天</span>
-				<span class="i-jz-date">4分钟前</span>
-				</div>
-			</a>
-
-			<a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-				<div class="weui-media-box__hd"><div class="i-circle">
-					类型
-				</div></div>
-				<div class="weui-media-box__bd i-jz">
-				<span class="weui-media-box__title i-jz-title">标题一</span><br>
-				<span class="i-jz-desc">江宁 5月1日开始（共10天）</span><br>
-				<span class="i-jz-money">100元/天</span>
-				<span class="i-jz-date">4分钟前</span>
-				</div>
-			</a>
 			</div>
 			<div class="weui-loadmore">
 				<i class="weui-loading"></i>
@@ -240,8 +168,11 @@
 	$("#city-picker").cityPicker({
 		showDistrict: false
 	});
-	
-	
+	$.cookie('citycode','320100',{expires:30,path:'/'});
+	function searchText(){
+		$.cookie('inputKey',$('#searchInput').val());
+		window.open('list');
+	}
 </script>
 </body>
 </html>

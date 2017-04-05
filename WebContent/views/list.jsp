@@ -18,7 +18,7 @@
 </head>
 <body ontouchstart>
 	<div class="weui-flex">
-		<div class="placeholder"><a id="ncity" value="320100" href="javascript:;" class="open-popup" data-target="#localSelect">南京市</a></div>
+		<div class="placeholder"><a href=""><i class="fa fa-chevron-left" style="color:#010101;margin-top: 90%;"></i></a></div>
 		<div class="weui-flex__item">
 			<div class="weui-search-bar" id="searchBar">
 				<form class="weui-search-bar__form">
@@ -32,11 +32,9 @@
 						<span>搜索</span>
 					</label>
 				</form>
-				<a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+				<a onclick="searchText();" class="weui-search-bar__cancel-btn" id="searchBtn">搜索</a>
 			</div>
-
 		</div>
-		<div class="placeholder"><a href="#"><i style="color:#010101;margin-top: 60%;" class="fa fa-user-o"></i></a></div>
 	</div>
 	<div class="weui-panel weui-panel_access">
 		
@@ -122,16 +120,21 @@
 		
 	</div>
 <div style="display:none;">
-<div id="dises_bak">all</div>
-<div id="labels_bak">all</div>
-<div id="dates_bak">all</div>
+<div id="city_bak">320100</div>
 <div id="index_bak">0</div>
 </div>	
 <script src="static/js/jquery-2.1.4.js"></script>
 <script src="static/js/fastclick.js"></script>
 <script src="static/js/jquery-weui.min.js"></script>
+<script src="static/js/jquery.cookie.js"></script>
+<script src="static/js/user/list.js"></script>
 <script type="text/javascript">
+$('#searchInput').val($.cookie('inputKey'));
 
+function searchText(){
+	searchKey = $('#searchInput').val();
+	cityCode = $.cookie('citycode');
+}
 </script>
 <script>
 </script>
