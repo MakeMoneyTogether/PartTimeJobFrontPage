@@ -1,6 +1,8 @@
 var dises_bak = $('#dises_bak')
 var labels_bak = $('#labels_bak')
 var dates_bak = $('#dates_bak')
+var index_bak = $('#index_bak')
+var ncity = $('#ncity')
 var loading = false;
 
 function onCheckBtn(){
@@ -30,21 +32,25 @@ function loadm(){
 		dises = dises_bak.html();
 		labels = labels_bak.html();
 		dates = dates_bak.html();
-		city = $('#ncity').html();
+		city = ncity.attr('value');
+		index = index_bak.html();
 		data = {dises:dises,labels:labels,dates:dates,city:city};
 		$.ajax({
 			type: "POST",
-			url: "jzurl/pages/0/3",
+			url: 'jzurl/pages/select/'+index+'/3',
 			dataType: "json",
 			data: data,
 			success:function(data){
+				console.log(index)
 				for(i=0;i<data.length;i++){
 					domhtml = genItem(data[i]);
 					$('#jz-infos').append(domhtml);
 				}
+				index = parseInt(index) +3;
+				index_bak.html(index);
+				loading = false;
 			}
 		});
-		loading = false;
 	}, 1000);  
 }
 $(document.body).infinite().on("infinite",loadm);
@@ -54,12 +60,12 @@ function onLoad(){
 	dises = dises_bak.html();
 	labels = labels_bak.html();
 	dates = dates_bak.html();
-	city = $('#ncity').html();
+	city = ncity.attr('value');
 	data = {dises:dises,labels:labels,dates:dates,city:city};
 	$('#jz-infos').html('');
 	$.ajax({
 		type: "POST",
-		url: "jzurl/pages/0/6",
+		url: "jzurl/pages/select/0/6",
 		dataType: "json",
 		data: data,
 		success:function(data){
@@ -67,6 +73,7 @@ function onLoad(){
 				domhtml = genItem(data[i]);
 				$('#jz-infos').append(domhtml);
 			}
+			index_bak.html(6);
 		}
 	});
 }
@@ -90,7 +97,7 @@ $("#ptime").click(function(){
 
 
 function getDistrict(){
-	var ccode = $('#ncity').attr('value');
+	var ccode = ncity.attr('value');
 	$.get('util/city/districts/'+ccode,function(data){
 		data = JSON.parse(data);
 		var districts = $('#districts');
@@ -170,14 +177,14 @@ function localset(){
 	    if(cname == ''){
 	    	alert('定位失败，请手动选择!');
 	    }else{
-		    $('#ncity').html(cname);
+		    ncity.html(cname);
 	    }
 	});
 }
 function setLocal(){
 	cc = $('#city-picker');
 	city = cc.val().split(' ')[1];
-	$('#ncity').html(city);
-	$('#ncity').attr('value',cc.attr('data-code'));
+	ncity.html(city);
+	ncity.attr('value',cc.attr('data-code'));
 	$.cookie('citycode',cc.attr('data-code'),{expires:30,path:'/'});
 }

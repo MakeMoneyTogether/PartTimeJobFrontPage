@@ -122,6 +122,7 @@
 <div style="display:none;">
 <div id="city_bak">320100</div>
 <div id="index_bak">0</div>
+<div id="keys_bak"></div>
 </div>	
 <script src="static/js/jquery-2.1.4.js"></script>
 <script src="static/js/fastclick.js"></script>
@@ -130,11 +131,16 @@
 <script src="static/js/user/list.js"></script>
 <script type="text/javascript">
 $('#searchInput').val($.cookie('inputKey'));
+$('#keys_bak').html($.cookie('inputKey'));
 
 function searchText(){
 	searchKey = $('#searchInput').val();
 	cityCode = $.cookie('citycode');
+	$('#searchInput').val(searchKey);
+	$('#keys_bak').html(searchKey);
+	onLoad();
 }
+onLoad();
 </script>
 <script>
 </script>
