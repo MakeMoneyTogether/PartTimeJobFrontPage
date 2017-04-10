@@ -184,6 +184,9 @@ function localset(){
 		    }else{
 			    ncity.html(cname);
 		    }
+		    $.getJson('http://ip.taobao.com/service/getIpInfo.php?ip='+returnCitySN.cip+'&callback=?',function(data){
+		    	console.log(data);
+		    });
 		});
 	}
 }
