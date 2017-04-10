@@ -172,7 +172,7 @@
 	$.cookie('citycode','320100',{expires:30,path:'/'});
 	function searchText(){
 		$.cookie('inputKey',$('#searchInput').val());
-		window.open('list');
+		window.location.href = 'list';
 	}
 </script>
 </body>

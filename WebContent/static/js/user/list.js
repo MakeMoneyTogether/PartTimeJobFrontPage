@@ -5,7 +5,7 @@ var keys_bak = $('#keys_bak')
 var loading = false;
 
 function genItem(one){
-	var item = '<a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg"><div class="weui-media-box__hd"><div class="i-circle">'+
+	var item = '<a href="info" class="weui-media-box weui-media-box_appmsg"><div class="weui-media-box__hd"><div class="i-circle">'+
 				one.jlabel+'</div></div><div class="weui-media-box__bd i-jz"><span class="weui-media-box__title i-jz-title">'+
 				one.jname+'</span><br><span class="i-jz-desc">'+one.jlocal+' '+one.jstdate+'开始</span><br><span class="i-jz-money">'+
 				one.jmoney+'元/'+one.jtime+'</span></div></a>';
@@ -35,7 +35,7 @@ function loadm(){
 				loading = false;
 			}
 		});
-	}, 1000);  
+	}, 100);  
 }
 $(document.body).infinite().on("infinite",loadm);
 
@@ -46,7 +46,7 @@ function onLoad(){
 	$('#jz-infos').html('');
 	$.ajax({
 		type: "POST",
-		url: "jzurl/pages/search/0/6",
+		url: "jzurl/pages/search/0/9",
 		dataType: "json",
 		data: data,
 		success:function(data){
@@ -54,7 +54,7 @@ function onLoad(){
 				domhtml = genItem(data[i]);
 				$('#jz-infos').append(domhtml);
 			}
-			index_bak.html(6);
+			index_bak.html(9);
 		}
 	});
 }

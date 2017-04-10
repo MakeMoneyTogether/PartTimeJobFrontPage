@@ -19,7 +19,7 @@ function onCheckBtn(){
 }
 
 function genItem(one){
-	var item = '<a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg"><div class="weui-media-box__hd"><div class="i-circle">'+
+	var item = '<a href="info" class="weui-media-box weui-media-box_appmsg"><div class="weui-media-box__hd"><div class="i-circle">'+
 				one.jlabel+'</div></div><div class="weui-media-box__bd i-jz"><span class="weui-media-box__title i-jz-title">'+
 				one.jname+'</span><br><span class="i-jz-desc">'+one.jlocal+' '+one.jstdate+'开始</span><br><span class="i-jz-money">'+
 				one.jmoney+'元/'+one.jtime+'</span></div></a>';
@@ -51,7 +51,7 @@ function loadm(){
 				loading = false;
 			}
 		});
-	}, 1000);  
+	}, 100);  
 }
 $(document.body).infinite().on("infinite",loadm);
 
@@ -171,15 +171,21 @@ function freshList(){
 	onLoad();
 }
 function localset(){
-	$.getScript('http://pv.sohu.com/cityjson?ie=utf-8', function(data){
-	    console.log(returnCitySN.cip);
-	    cname = returnCitySN.cname.replace(/.*[省|自治区]/,'');
-	    if(cname == ''){
-	    	alert('定位失败，请手动选择!');
-	    }else{
-		    ncity.html(cname);
-	    }
-	});
+	var t_cityCode = $.cookie('citycode');
+	if(t_cityCode.length > 5){
+		ncity.attr('value',t_cityCode);
+		ncity.html($.cookie('cityname'));
+	}else{
+		$.getScript('http://pv.sohu.com/cityjson?ie=utf-8', function(data){
+		    console.log(returnCitySN.cip);
+		    cname = returnCitySN.cname.replace(/.*[省|自治区]/,'');
+		    if(cname == ''){
+		    	alert('定位失败，请手动选择!');
+		    }else{
+			    ncity.html(cname);
+		    }
+		});
+	}
 }
 function setLocal(){
 	cc = $('#city-picker');
@@ -187,4 +193,5 @@ function setLocal(){
 	ncity.html(city);
 	ncity.attr('value',cc.attr('data-code'));
 	$.cookie('citycode',cc.attr('data-code'),{expires:30,path:'/'});
+	$.cookie('cityname',city,{expires:30,path:'/'});
 }

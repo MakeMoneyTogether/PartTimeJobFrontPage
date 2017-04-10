@@ -1,5 +1,7 @@
 package partjob.controller;
 
+import javax.sound.midi.MidiDevice.Info;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -10,7 +12,7 @@ public class PageController {
 
 	@RequestMapping("/")
 	public String index(){
-		return "index";
+		return "user/index";
 	}
 	
 	@RequestMapping("test")
@@ -19,7 +21,11 @@ public class PageController {
 	}
 	@RequestMapping("list")
 	public String list(){
-		return "list";
+		return "user/list";
+	}
+	@RequestMapping("info")
+	public String info(){
+		return "user/info";
 	}
 	
 	@RequestMapping("restful")
