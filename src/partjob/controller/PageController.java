@@ -23,7 +23,7 @@ public class PageController {
 	public String list(){
 		return "user/list";
 	}
-	@RequestMapping("info")
+	@RequestMapping("info/{jid}")
 	public String info(){
 		return "user/info";
 	}

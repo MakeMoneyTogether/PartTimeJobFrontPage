@@ -19,7 +19,7 @@ function onCheckBtn(){
 }
 
 function genItem(one){
-	var item = '<a href="info" class="weui-media-box weui-media-box_appmsg"><div class="weui-media-box__hd"><div class="i-circle">'+
+	var item = '<a href="info/'+one.jid+'" class="weui-media-box weui-media-box_appmsg"><div class="weui-media-box__hd"><div class="i-circle">'+
 				one.jlabel+'</div></div><div class="weui-media-box__bd i-jz"><span class="weui-media-box__title i-jz-title">'+
 				one.jname+'</span><br><span class="i-jz-desc">'+one.jlocal+' '+one.jstdate+'开始</span><br><span class="i-jz-money">'+
 				one.jmoney+'元/'+one.jtime+'</span></div></a>';
@@ -184,8 +184,19 @@ function localset(){
 		    }else{
 			    ncity.html(cname);
 		    }
-		    $.getJson('http://ip.taobao.com/service/getIpInfo.php?ip='+returnCitySN.cip+'&callback=?',function(data){
-		    	console.log(data);
+//		    $.getJSON('http://ip.taobao.com/service/getIpInfo.php?ip='+returnCitySN.cip+'&callback=?',function(data){
+//		    	console.log(data);
+//		    });
+		    console.log(returnCitySN.cip);
+		    $.ajax({
+		    	dataType:'jsonp',
+		    	url:'http://ip.taobao.com/service/getIpInfo.php',
+		    	jsonpCallback: 'json',
+		    	jsonp:'callback',
+		    	data:{ip:returnCitySN.cip},
+		    	success: function(data){
+		    		console.log(data[data]);
+		    	}
 		    });
 		});
 	}

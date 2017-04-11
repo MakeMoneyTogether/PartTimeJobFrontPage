@@ -1,13 +1,15 @@
 package partjob.entity;
 
 public class JZItem {
+	int jid;
 	String jname;
 	String jlabel;
 	String jlocal;
 	String jstdate;
 	String jmoney;
 	String jtime;
-	public JZItem(String jname,String jlabel,String jlocal,String jstdate,String jmoney,String jtime){
+	public JZItem(int jid,String jname,String jlabel,String jlocal,String jstdate,String jmoney,String jtime){
+		this.jid = jid;
 		this.jname = jname;
 		this.jlabel = jlabel;
 		this.jlocal = jlocal;
@@ -15,6 +17,15 @@ public class JZItem {
 		this.jmoney = jmoney;
 		this.jtime = jtime;
 	}
+	
+	public int getJid() {
+		return jid;
+	}
+
+	public void setJid(int jid) {
+		this.jid = jid;
+	}
+
 	public String getJname() {
 		return jname;
 	}

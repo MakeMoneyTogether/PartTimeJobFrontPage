@@ -169,7 +169,7 @@
 	$("#city-picker").cityPicker({
 		showDistrict: false
 	});
-	$.cookie('citycode','320100',{expires:30,path:'/'});
+	//$.cookie('citycode','320100',{expires:30,path:'/'});
 	function searchText(){
 		$.cookie('inputKey',$('#searchInput').val());
 		window.location.href = 'list';
