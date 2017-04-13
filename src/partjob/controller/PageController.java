@@ -42,6 +42,11 @@ public class PageController {
 	public String login(){
 		return "user/login";
 	}
+
+	@RequestMapping("user/register")
+	public String register(){
+		return "user/register";
+	}
 	
 	@RequestMapping("restful")
 	@ResponseBody

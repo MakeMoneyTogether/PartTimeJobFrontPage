@@ -2,6 +2,7 @@ package partjob.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -39,5 +40,22 @@ public class UtilController {
 		labels.add(new Labels(1003, "调研"));
 		labels.add(new Labels(1004, "客服"));
 		return labels;
+	}
+	
+	@RequestMapping("sendCode")
+	@ResponseBody
+	public String sendCode(String phone){
+		Random random = new Random();
+		String code = "";
+		for(int i=0;i<6;i++){
+			code += random.nextInt(9);
+		}
+		return code;
+	}
+	
+	@RequestMapping("judgeId")
+	@ResponseBody
+	public int judgeLoginId(String loginId){
+		return 0;
 	}
 }
