@@ -35,7 +35,7 @@
 			</div>
 
 		</div>
-		<div class="placeholder"><a href="#"><i style="color:#010101;margin-top: 60%;" class="fa fa-user-o"></i></a></div>
+		<div class="placeholder"><a href="user/me"><i style="color:#010101;margin-top: 60%;" class="fa fa-user-o"></i></a></div>
 	</div>
 	<div>
 		<div class="swiper-container">
@@ -172,7 +172,7 @@
 	//$.cookie('citycode','320100',{expires:30,path:'/'});
 	function searchText(){
 		$.cookie('inputKey',$('#searchInput').val());
-		window.location.href = 'list';
+		window.location.href = 'user/list';
 	}
 </script>
 </body>

@@ -15,17 +15,27 @@ public class PageController {
 		return "user/index";
 	}
 	
+	@RequestMapping("user")
+	public String user(){
+		return "user/index";
+	}
+	
 	@RequestMapping("test")
 	public String test(){
 		return "test";
 	}
-	@RequestMapping("list")
+	@RequestMapping("user/list")
 	public String list(){
 		return "user/list";
 	}
-	@RequestMapping("info/{jid}")
+	@RequestMapping("user/info/{jid}")
 	public String info(){
 		return "user/info";
+	}
+	
+	@RequestMapping("user/me")
+	public String me(){
+		return "user/me";
 	}
 	
 	@RequestMapping("restful")
