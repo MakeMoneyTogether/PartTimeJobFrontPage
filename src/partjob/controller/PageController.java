@@ -38,6 +38,11 @@ public class PageController {
 		return "user/me";
 	}
 	
+	@RequestMapping("user/login")
+	public String login(){
+		return "user/login";
+	}
+	
 	@RequestMapping("restful")
 	@ResponseBody
 	public String restful(){

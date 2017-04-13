@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="static/css/jquery-weui.min.css">
 <link rel="stylesheet" href="static/css/font-awesome.min.css">
 <link rel="stylesheet" href="static/css/jz.css">
+<link rel="stylesheet" href="static/css/user/me.css">
 <link rel="stylesheet" href="static/css/col.css">
 </head>
 <body ontouchstart>
@@ -26,7 +27,7 @@
 		<div class="placeholder"><a href="user"><i style="color:#010101;margin-top: 60%;" class="fa fa-home"></i></a></div>
 	</div>
 	<div class="weui-form-preview">
-		<div class="weui-form-preview__hd div_left">
+		<div class="weui-form-preview__hd">
 			<div class="col-20 div_left">
 				<img style="width:100%;" alt="统一头像" src="static/images/1.jpg">
 			</div>
@@ -37,10 +38,81 @@
 			<div class="col-30 div_right">
 				<a style="">编辑简历></a>
 			</div>
+			<div style="clear:both"></div>
 		</div>
-		<div style="clear:both"></div>
+		<div class="weui-form-preview__hd" style="text-align:center;padding:0;padding-bottom:0;">
+			<div class="weui-flex">
+				<div onclick="jump(0,this);" class="weui-flex__item div_box">已报名
+					<span id="s0">10</span>
+				</div>
+				<div onclick="jump(1,this);" class="weui-flex__item div_box">已录用
+					<span id="s1">10</span>
+				</div>
+				<div onclick="jump(2,this);" class="weui-flex__item div_box">已到岗
+					<span id="s2">10</span>
+				</div>
+				<div onclick="jump(3,this);" class="weui-flex__item div_box">已结算
+					<span id="s3">10</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="weui-cells">
+		<div class="weui-cell weui-cell_access" onclick="jump(4);">
+			<div class="weui-cell__hd">
+				<i class="fa fa-money"></i>
+			</div>
+			<div class="weui-cell__bd">
+				<p style="margin-left:10%;">钱包</p>
+			</div>
+			<div id="money" class="weui-cell__ft">
+				0.00
+			</div>
+		</div>
+		<div class="weui-cell weui-cell_access" onclick="jump(5);">
+			<div class="weui-cell__hd">
+				<i class="fa fa-cog"></i>
+			</div>
+			<div class="weui-cell__bd">
+				<p style="margin-left:10%;">修改密码</p>
+			</div>
+			<div class="weui-cell__ft">
+			</div>
+		</div>
+		<div class="weui-cell weui-cell_access" onclick="jump(6);">
+			<div class="weui-cell__hd">
+				<i class="fa fa-comment"></i>
+			</div>
+			<div class="weui-cell__bd">
+				<p style="margin-left:10%;">邀请好友</p>
+			</div>
+			<div class="weui-cell__ft">
+			</div>
+		</div>
+	</div>
+	<div class="weui-panel weui-panel_access">
+		
+		<div class="weui-panel__bd" id="jz-all">
+			<div id="jz-infos">
+				<div class="weui-form-preview__bd">
+					<div class="weui-form-preview__item">
+						<label class="weui-form-preview__label">关于我们：</label>
+						<br>
+						<span class="info-desc" id="jz-des">
+							我们是特别厉害的兼职平台。我们是特别厉害的兼职平台。我们是特别厉害的兼职平台。
+							我们是特别厉害的兼职平台。我们是特别厉害的兼职平台。我们是特别厉害的兼职平台。
+							我们是特别厉害的兼职平台。我们是特别厉害的兼职平台。
+							我们是特别厉害的兼职平台。我们是特别厉害的兼职平台。
+							我们是特别厉害的兼职平台。我们是特别厉害的兼职平台。我们是特别厉害的兼职平台。
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
 	</div>
 <div style="display:none;">
+<div id="uid_bak">007</div>
 </div>	
 <script src="static/js/jquery-2.1.4.js"></script>
 <script src="static/js/fastclick.js"></script>

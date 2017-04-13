@@ -35,3 +35,20 @@
 - url: `jzurl/pages/item/${jid}`
 - 输入参数:	${jid}兼职id
 - 输出参数:	兼职详情的json数据
+
+### 用户参与的兼职列表
+- url: `jzurl/pages/sitem/{uid}/{statuId}`
+- 输入参数: ${uid}用户Id,${statuId}状态ID(0:已报名;1:已录用;2:已到岗;3:已结算)
+- 输出参数: 兼职列表
+
+### 验证用户登录
+- url: `jzurl/pages/login`
+- 表单域1:	loginId登录名
+- 表单域2:	password登录密码
+- 输出参数:	一个数字(0:验证成功;1:用户名出错;2:密码出错)
+
+### 获取用户信息
+- url: `jzurl/pages/me`
+- 表单域1:	loginId登录名
+- 表单域2:	password登录密码
+- 输出参数:	用户基本信息
