@@ -24,7 +24,7 @@ function jump(p,e){
 			break;
 		case 5:
 			console.log("修改密码");
-			repwd();
+			$('#repass').popup();
 			break;
 		case 6:
 			console.log("邀请好友");
@@ -59,9 +59,15 @@ function flushJZ(sid){
 }
 
 function repwd(){
-	var npwd = 'a'
-	var rnpwd ='a'
-	var pwd = 'a'
+	var npwd = $('#npwd').val();
+	var rnpwd =$('#rnpwd').val();
+	var pwd = $('#pwd').val();
+	
+	if(rnpwd != npwd){
+		$.alert('两次密码不一致');
+		return;
+	}
+	
 	loginId = $.cookie('loginId');
 	$.ajax({
 		type:'POST',
@@ -70,10 +76,16 @@ function repwd(){
 		data:{loginId:loginId,pwd:pwd,npwd:npwd},
 		success: function(data){
 			console.log(data);
-			$.notification({
-				text: '修改密码成功',
-
-			});
+			if(data == 0){
+				$.notification({
+					text: '修改密码成功',
+				});
+				$.closePopup()
+				$.cookie('password',npwd,{expires:30,path:'/'});
+				$('#npwd').val('');
+				$('#rnpwd').val('');
+				$('#pwd').val('');
+			}
 		}
 	});
 }

@@ -109,8 +109,43 @@
 				</div>
 			</div>
 		</div>
-		
 	</div>
+	<div id="repass" class="weui-popup__container popup-bottom" style="background: rgba(0, 0, 0, 0.63);">
+	<div class="weui-popup__overlay" ></div>
+	<div class="weui-popup__modal" style="height:70%;background: rgba(0, 0, 0, 0);">
+		<div class="weui-form-preview">
+			<center><h2>修改密码</h2></center>
+		<div class="weui-cells weui-cells_form">
+			<div class="weui-cell">
+				<div class="weui-cell__hd"><label class="weui-label">原密码</label></div>
+				<div class="weui-cell__bd">
+					<input id="pwd" class="weui-input" type="password" placeholder="请输入原密码">
+				</div>
+			</div>
+			<div class="weui-cell">
+				<div class="weui-cell__hd"><label class="weui-label">新密码</label></div>
+				<div class="weui-cell__bd">
+					<input id="npwd" class="weui-input" type="password" placeholder="请输入新密码">
+				</div>
+			</div>
+			<div class="weui-cell">
+				<div class="weui-cell__hd"><label class="weui-label">确认密码</label></div>
+				<div class="weui-cell__bd">
+					<input id="rnpwd" class="weui-input" type="password" placeholder="请重复输入新密码">
+				</div>
+			</div>
+		</div>
+		<div class="weui-flex">
+		<div class="weui-flex__item" style="padding:5%;">
+			<a class="weui-btn weui-btn_mini weui-btn_default close-popup" style="width:80%;">返回</a>
+		</div>
+		<div class="weui-flex__item" style="padding:5%;">
+			<a onclick="repwd();" class="weui-btn weui-btn_mini weui-btn_primary" style="width:80%;">修改</a>
+		</div>
+	</div>
+	</div>
+	</div>
+</div>
 <div style="display:none;">
 <div id="uid_bak">007</div>
 </div>	
