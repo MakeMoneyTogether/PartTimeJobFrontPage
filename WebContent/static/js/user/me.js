@@ -24,6 +24,7 @@ function jump(p,e){
 			break;
 		case 5:
 			console.log("修改密码");
+			repwd();
 			break;
 		case 6:
 			console.log("邀请好友");
@@ -56,6 +57,27 @@ function flushJZ(sid){
 		}
 	});
 }
+
+function repwd(){
+	var npwd = 'a'
+	var rnpwd ='a'
+	var pwd = 'a'
+	loginId = $.cookie('loginId');
+	$.ajax({
+		type:'POST',
+		url: 'uurl/rpwd',
+		dataType:'json',
+		data:{loginId:loginId,pwd:pwd,npwd:npwd},
+		success: function(data){
+			console.log(data);
+			$.notification({
+				text: '修改密码成功',
+
+			});
+		}
+	});
+}
+
 $(function(){
 	loginId = $.cookie('loginId');
 	if(loginId !=null && loginId.length > 6){

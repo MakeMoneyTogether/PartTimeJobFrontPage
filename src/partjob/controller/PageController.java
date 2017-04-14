@@ -48,6 +48,11 @@ public class PageController {
 		return "user/register";
 	}
 	
+	@RequestMapping("user/editcv")
+	public String editCV(){
+		return "user/editcv";
+	}
+	
 	@RequestMapping("restful")
 	@ResponseBody
 	public String restful(){

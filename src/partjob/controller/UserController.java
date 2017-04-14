@@ -54,4 +54,20 @@ public class UserController {
 		System.out.println(invitation);
 		return 0;
 	}
+	@RequestMapping("rpwd")
+	@ResponseBody
+	public int repassword(String loginId,String pwd,String npwd){
+		System.out.println(loginId);
+		System.out.println(pwd);
+		System.out.println(npwd);
+		return 0;
+	}
+	@RequestMapping("editcv")
+	@ResponseBody
+	public int updatecv(String loginId,String pwd,String npwd){
+		System.out.println(loginId);
+		System.out.println(pwd);
+		System.out.println(npwd);
+		return 0;
+	}
 }

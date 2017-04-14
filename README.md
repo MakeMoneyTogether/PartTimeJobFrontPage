@@ -42,13 +42,13 @@
 - 输出参数: 兼职列表
 
 ### 验证用户登录
-- url: `jzurl/pages/login`
+- url: `uurl/pages/login`
 - 表单域1:	loginId登录名
 - 表单域2:	password登录密码
 - 输出参数:	一个数字(0:验证成功;1:用户名出错;2:密码出错)
 
 ### 获取用户信息
-- url: `jzurl/pages/me`
+- url: `uurl/pages/me`
 - 表单域1:	loginId登录名
 - 表单域2:	password登录密码
 - 输出参数:	用户基本信息
@@ -59,6 +59,28 @@
 - 输出参数:	6位验证码
 
 ### 验证用户是否存在
-- url:	`util/judgeId`
+- url:	`uurl/judgeId`
 - 表单域:	loginId登录名
 - 输出参数:	0该登录名可用，其他数字表示不可用
+
+### 用户注册
+- url:	`uurl/register`
+- 表单域1:	loginId登录名
+- 表单域2:	pwd用户密码
+- 表单域3:	phone手机号码
+- 表单域4:	invitation邀请码
+- 输出参数:	0表示注册成功，其他数字表示不可用
+
+### 修改密码
+- url:	`uurl/rpwd`
+- 表单域1:	loginId登录名
+- 表单域2:	pwd用户密码
+- 表单域3:	npwd新密码
+- 输出参数:	0表示修改成功
+
+### 编辑简历
+- url:	`uurl/editcv`
+- 表单域1:	loginId登录名
+- 表单域2:	pwd用户密码
+- 表单域n:	其他好多
+- 输出参数:	0表示修改成功

@@ -36,23 +36,23 @@
 				<span style="margin-left:5%;float:left;" id="ugpa">5.0</span>
 			</div>
 			<div class="col-30 div_right">
-				<a style="">编辑简历></a>
+				<a href="user/editcv">编辑简历></a>
 			</div>
 			<div style="clear:both"></div>
 		</div>
 		<div class="weui-form-preview__hd" style="text-align:center;padding:0;padding-bottom:0;">
 			<div class="weui-flex">
 				<div onclick="jump(0,this);" class="weui-flex__item div_box">已报名
-					<span id="s0">10</span>
+					<span id="s0"></span>
 				</div>
 				<div onclick="jump(1,this);" class="weui-flex__item div_box">已录用
-					<span id="s1">10</span>
+					<span id="s1"></span>
 				</div>
 				<div onclick="jump(2,this);" class="weui-flex__item div_box">已到岗
-					<span id="s2">10</span>
+					<span id="s2"></span>
 				</div>
 				<div onclick="jump(3,this);" class="weui-flex__item div_box">已结算
-					<span id="s3">10</span>
+					<span id="s3"></span>
 				</div>
 			</div>
 		</div>
