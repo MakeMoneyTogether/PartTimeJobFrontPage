@@ -38,21 +38,6 @@
 					<input id="password" class="weui-input" type="password" placeholder="请输入密码">
 				</div>
 			</div>
-		<!-- 
-			<div class="weui-cell">
-				<div class="weui-cell__hd"><label class="weui-label">确认密码</label></div>
-				<div class="weui-cell__bd">
-					<input class="weui-input" type="password" placeholder="请输入密码">
-				</div>
-			</div>
-			<div class="weui-cell">
-				<div class="weui-cell__hd"><label class="weui-label">邀请码</label></div>
-				<div class="weui-cell__bd">
-					<input class="weui-input" type="text" placeholder="选填">
-				</div>
-			</div>
-		 -->
-
 		</div>
 	</div>
 		<a onclick="login();" class="weui-btn weui-btn_primary commitBtn">登录</a>
@@ -72,7 +57,7 @@
 		
 		$.ajax({
 			type:'POST',
-			url: 'jzurl/pages/login',
+			url: 'uurl/pages/login',
 			dataType:'json',
 			data:{loginId:loginId,password:pwd},
 			success: function(data){

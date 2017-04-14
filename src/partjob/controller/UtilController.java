@@ -53,9 +53,5 @@ public class UtilController {
 		return code;
 	}
 	
-	@RequestMapping("judgeId")
-	@ResponseBody
-	public int judgeLoginId(String loginId){
-		return 0;
-	}
+
 }

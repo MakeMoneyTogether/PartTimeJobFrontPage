@@ -62,7 +62,7 @@ $(function(){
 		pwd = $.cookie('password');
 		$.ajax({
 			type:'POST',
-			url: 'jzurl/pages/me',
+			url: 'uurl/pages/me',
 			dataType:'json',
 			data:{loginId:loginId,password:pwd},
 			success: function(data){

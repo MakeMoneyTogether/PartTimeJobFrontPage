@@ -15,8 +15,7 @@ import partjob.entity.JZItem;
 @Controller
 @RequestMapping("jzurl")
 public class JZController {
-	String names[] = {"柳新颖","令狐飞沉","赧夏烟","守苇然","荤明轩","兴晓凡","羊问兰","养之桃","阮迎荷","闽友易","塔淑雅"};
-	
+		
 	@ResponseBody
 	@RequestMapping("pages/select/{offset}/{length}")
 	public List<JZItem> select(@PathVariable int offset,@PathVariable int length,String dises,String labels,String dates,String city){
@@ -97,29 +96,5 @@ public class JZController {
 		}
 		return items;
 	}
-	
-	@ResponseBody
-	@RequestMapping("pages/login")
-	public int login(String loginId,String password){
-		System.out.println("loginId = "+loginId);
-		System.out.println("password = "+password);
-		return 0;
-	}
-	
-	@ResponseBody
-	@RequestMapping("pages/me")
-	public User me(String loginId,String password){
-		System.out.println("loginId = "+loginId);
-		System.out.println("password = "+password);
-		Random random = new Random();
-		User user = new User();
-		user.setName(names[random.nextInt(names.length)]);
-		user.setGrade(""+(random.nextInt(5)+1));
-		user.setBalance((random.nextInt(1000)+100)/100.0);
-		user.setS1(random.nextInt(10));
-		user.setS2(random.nextInt(10));
-		user.setS3(random.nextInt(10));
-		user.setS4(random.nextInt(10));
-		return user;
-	}
+
 }
