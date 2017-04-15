@@ -33,11 +33,12 @@ function commit(){
 	pwd = $('#password').val()
 	phone = $('#phone').val();
 	invitation = $('#invitation').val();
+	code = $('#code').val();
 	$.ajax({
 		type:'POST',
 		url: 'uurl/register',
 		dataType:'json',
-		data:{loginId:loginId,pwd:pwd,phone:phone,invitation:invitation},
+		data:{loginId:loginId,pwd:pwd,phone:phone,invitation:invitation,code:code},
 		success: function(data){
 			console.log(data);
 			if(data == 0){
@@ -67,17 +68,16 @@ function get_code(){
 		data:{phone:phone},
 		success: function(data){
 			console.log(data);
-			if(data.length < 6){
+			if(data > 0){
 				$.alert('验证码发送失败，请重试');
 				$('#code_btn').html('获取');
 			}else{
 				$.notification({
-					text: '【兼职平台】您的兼职平台手机验证码为：'+data+'<br>打死也不要告诉别人。',
+					text: '【兼职平台】您的兼职平台手机验证码为：320100<br>打死也不要告诉别人。',
 					onClick: function(data) {
 						$.alert('吓你呢，这只是个测试。');
 					},
 				});
-				$('#code_bak').html(data);
 			}
 		}
 	});
