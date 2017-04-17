@@ -61,13 +61,13 @@ function apply(){
 			opBtn.html('已报名');
 		}
 		if(data.code == 1){
-			$.toast('报名失败，人数已满');
+			$.toast('报名失败，人数已满','cancel');
 		}
 		if(data.code == 2){
-			$.toast('报名失败，余额不足');
+			$.toast('报名失败，余额不足','forbidden');
 		}
 		if(data.code == 3){
-			$.toast('报名失败，时段重复');
+			$.toast('报名失败，时段重复','forbidden');
 		}
 	});
 }
