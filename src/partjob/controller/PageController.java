@@ -53,6 +53,11 @@ public class PageController {
 		return "user/editcv";
 	}
 	
+	@RequestMapping("user/wallet")
+	public String wallet(){
+		return "user/wallet";
+	}
+	
 	@RequestMapping("restful")
 	@ResponseBody
 	public String restful(){

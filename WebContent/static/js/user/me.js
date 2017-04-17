@@ -22,6 +22,7 @@ function jump(p,e){
 			break;
 		case 4:
 			console.log("钱包");
+			window.location.href="user/wallet";
 			break;
 		case 5:
 			console.log("修改密码");
