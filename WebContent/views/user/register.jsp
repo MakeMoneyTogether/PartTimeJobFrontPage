@@ -27,12 +27,6 @@
 	<div class="weui-form-preview">
 		<div class="weui-cells weui-cells_form">
 			<div class="weui-cell">
-				<div class="weui-cell__hd"><label class="weui-label">用户名</label></div>
-				<div class="weui-cell__bd">
-					<input id="loginId" class="weui-input" type="text" placeholder="请输入登录名">
-				</div>
-			</div>
-			<div class="weui-cell">
 				<div class="weui-cell__hd"><label class="weui-label">密码</label></div>
 				<div class="weui-cell__bd">
 					<input id="password" class="weui-input" type="password" placeholder="请输入密码">

@@ -31,7 +31,7 @@ function jump(p,e){
 			break;
 		case 7:
 			console.log("退出登录");
-			$.removeCookie('loginId',{path:'/'});
+			$.removeCookie('phone',{path:'/'});
 			$.removeCookie('password',{path:'/'});
 			window.location.href="user";
 			break;
@@ -74,12 +74,12 @@ function repwd(){
 		return;
 	}
 	
-	loginId = $.cookie('loginId');
+	phone = $.cookie('phone');
 	$.ajax({
 		type:'POST',
 		url: 'uurl/rpwd',
 		dataType:'json',
-		data:{loginId:loginId,pwd:pwd,npwd:npwd},
+		data:{phone:phone,pwd:pwd,npwd:npwd},
 		success: function(data){
 			console.log(data);
 			if(data == 0){
@@ -91,20 +91,22 @@ function repwd(){
 				$('#npwd').val('');
 				$('#rnpwd').val('');
 				$('#pwd').val('');
+			}else{
+				$.alert("原密码不正确");
 			}
 		}
 	});
 }
 
 $(function(){
-	loginId = $.cookie('loginId');
-	if(loginId !=null && loginId.length > 6){
+	phone = $.cookie('phone');
+	if(phone !=null && phone.length > 6){
 		pwd = $.cookie('password');
 		$.ajax({
 			type:'POST',
 			url: 'uurl/pages/me',
 			dataType:'json',
-			data:{loginId:loginId,password:pwd},
+			data:{phone:phone,password:pwd},
 			success: function(data){
 				$('#uname').html(data.name);
 				$('#ugpa').html(data.grade);
@@ -112,7 +114,7 @@ $(function(){
 				$('#s0').html(data.s4);
 				$('#s1').html(data.s1);
 				$('#s2').html(data.s2);
-				$('#s3').html(data.s4);
+				$('#s3').html(data.s3);
 			}
 		});
 	}else{

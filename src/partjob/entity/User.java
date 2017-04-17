@@ -2,10 +2,9 @@ package partjob.entity;
 
 public class User {
 	int uid;
-	String loginId;
+	String phone;
 	String name;
 	String gender;
-	String phone;
 	String password;
 	double balance;
 	String major;
@@ -22,12 +21,6 @@ public class User {
 	}
 	public void setUid(int uid) {
 		this.uid = uid;
-	}
-	public String getLoginId() {
-		return loginId;
-	}
-	public void setLoginId(String loginId) {
-		this.loginId = loginId;
 	}
 	public String getName() {
 		return name;

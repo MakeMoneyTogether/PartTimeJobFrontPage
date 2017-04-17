@@ -15,16 +15,16 @@ public class UserController {
 	
 	@ResponseBody
 	@RequestMapping("pages/login")
-	public int login(String loginId,String password){
-		System.out.println("loginId = "+loginId);
+	public int login(String phone,String password){
+		System.out.println("phone = "+phone);
 		System.out.println("password = "+password);
 		return 0;
 	}
 	
 	@ResponseBody
 	@RequestMapping("pages/me")
-	public User me(String loginId,String password){
-		System.out.println("loginId = "+loginId);
+	public User me(String phone,String password){
+		System.out.println("phone = "+phone);
 		System.out.println("password = "+password);
 		Random random = new Random();
 		User user = new User();
@@ -40,15 +40,15 @@ public class UserController {
 	
 	@RequestMapping("judgeId")
 	@ResponseBody
-	public int judgeLoginId(String loginId){
+	public int judgephone(String phone){
 		return 0;
 	}
 	
 	@RequestMapping("register")
 	@ResponseBody
-	public int register(String loginId,String pwd,String phone,String invitation){
+	public int register(String phone,String pwd,String phone,String invitation){
 		System.out.println("---------register-------");
-		System.out.println(loginId);
+		System.out.println(phone);
 		System.out.println(pwd);
 		System.out.println(phone);
 		System.out.println(invitation);
@@ -56,16 +56,16 @@ public class UserController {
 	}
 	@RequestMapping("rpwd")
 	@ResponseBody
-	public int repassword(String loginId,String pwd,String npwd){
-		System.out.println(loginId);
+	public int repassword(String phone,String pwd,String npwd){
+		System.out.println(phone);
 		System.out.println(pwd);
 		System.out.println(npwd);
 		return 0;
 	}
 	@RequestMapping("editcv")
 	@ResponseBody
-	public int updatecv(String loginId,String pwd,String npwd){
-		System.out.println(loginId);
+	public int updatecv(String phone,String pwd,String npwd){
+		System.out.println(phone);
 		System.out.println(pwd);
 		System.out.println(npwd);
 		return 0;

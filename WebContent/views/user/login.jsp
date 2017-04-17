@@ -27,9 +27,9 @@
 	<div class="weui-form-preview">
 		<div class="weui-cells weui-cells_form">
 			<div class="weui-cell">
-				<div class="weui-cell__hd"><label class="weui-label">用户名</label></div>
+				<div class="weui-cell__hd"><label class="weui-label">手机号</label></div>
 				<div class="weui-cell__bd">
-					<input id="loginId" class="weui-input" type="text" placeholder="请输入登录名">
+					<input id="phone" class="weui-input" type="text" placeholder="请输入手机号码">
 				</div>
 			</div>
 			<div class="weui-cell">
@@ -52,23 +52,20 @@
 </script>
 <script>
 	function login(){
-		loginId = $('#loginId').val();
+		phone = $('#phone').val();
 		pwd = $('#password').val();
 		
 		$.ajax({
 			type:'POST',
 			url: 'uurl/pages/login',
 			dataType:'json',
-			data:{loginId:loginId,password:pwd},
+			data:{phone:phone,password:pwd},
 			success: function(data){
-				if(data == 2){
-					$.alert('密码错误！！');
-				}
 				if(data == 1){
-					$.alert('请检查用户名不存在！！');
+					$.alert('登录名或密码错误！！');
 				}
 				if(data == 0){
-					$.cookie('loginId',loginId,{expires:30,path:'/'});
+					$.cookie('phone',phone,{expires:30,path:'/'});
 					$.cookie('password',pwd,{expires:30,path:'/'});
 					window.location.href='user/me';
 				}
