@@ -1,10 +1,13 @@
 package partjob.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import partjob.entity.User;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -95,6 +98,35 @@ public class JZController {
 			items.add(new JZItem(random.nextInt(100000),jznames[random.nextInt(jzn)], labelsall[random.nextInt(labeln)], disesall[random.nextInt(disn)], "2017-05-01", "100", "天"));
 		}
 		return items;
+	}
+	
+	@ResponseBody
+	@RequestMapping("pages/u2j/{phone}/{jid}")
+	public int jz2userStatu(@PathVariable String phone,@PathVariable int jid){
+		System.out.println(phone);
+		System.out.println(jid);
+		Random random = new Random();
+		return random.nextInt(5);
+	}
+	
+	@ResponseBody
+	@RequestMapping("pages/apply/{phone}/{jid}")
+	public Map<String, Integer> apply(@PathVariable String phone,@PathVariable int jid){
+		Map<String, Integer> res = new HashMap<String, Integer>();
+		Random random = new Random();
+		int code = random.nextInt(4);
+		int all = random.nextInt(10)+5;
+		if(code == 1){
+			res.put("code", code);
+			res.put("applied", all);
+			res.put("all", all);
+		}else {
+			int num = random.nextInt(all);
+			res.put("code", code);
+			res.put("applied", num);
+			res.put("all", all);
+		}
+		return res;
 	}
 
 }

@@ -7,26 +7,7 @@ function register(){
 		$.alert('请先获取验证码');
 		return;
 	}
-	if($('#code').val() != $('#code_bak').html()){
-		$.alert('验证码不正确');
-		return;
-	}
-	phone= $('#phone').val();
-	$.ajax({
-		type:'POST',
-		url: 'uurl/judgeId',
-		dataType:'json',
-		data:{phone:phone},
-		success: function(data){
-			console.log(data);
-			if(data == 0){
-				commit();
-			}else{
-				$.alert('用户名已存在');
-				return;
-			}
-		}
-	});
+	commit();
 }
 function commit(){
 	phone= $('#phone').val();

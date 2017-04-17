@@ -158,6 +158,7 @@
 </div>
 <div style="display:none;">
 <div id="uid_bak">007</div>
+<div id="invitation_bak">007</div>
 </div>	
 <script src="static/js/jquery-2.1.4.js"></script>
 <script src="static/js/fastclick.js"></script>

@@ -20,7 +20,7 @@
 	<div class="weui-flex">
 		<div class="placeholder"><a onclick="history.go(-1);"><i class="fa fa-chevron-left" style="color:#010101;margin-top: 90%;"></i></a></div>
 		<div class="weui-flex__item placeholder">
-			<span id="jz-title">实验室招搬砖</span>
+			<span id="jz-title"></span>
 		</div>
 		<div class="placeholder"><a href="user/me"><i style="color:#010101;margin-top: 60%;" class="fa fa-user-o"></i></a></div>
 	</div>
@@ -28,37 +28,37 @@
 		<div class="weui-form-preview__hd">
 			<div class="weui-form-preview__item">
 				<label class="weui-form-preview__label"></label>
-				<span class="weui-form-preview__value" id="jz-name">实验室搬砖</span>
-				<button class="weui-btn weui-btn_mini weui-btn_primary">报名</button>
+				<span class="weui-form-preview__value" id="jz-name"></span>
+				<button id="opBtn" class="weui-btn weui-btn_mini weui-btn_primary">报名</button>
 			</div>
 		</div>
 		<div class="weui-form-preview__bd">
 			<div class="weui-form-preview__item">
 				<label class="weui-form-preview__label">薪资：</label>
-				<span class="weui-form-preview__value" style="color:red;" id="jz-money">100元/天</span>
+				<span class="weui-form-preview__value" style="color:red;" id="jz-money"></span>
 			</div>
 			<div class="weui-form-preview__item">
 				<label class="weui-form-preview__label">类型：</label>
-				<span class="weui-form-preview__value" id="jz-label">体力活</span>
+				<span class="weui-form-preview__value" id="jz-label"></span>
 			</div>
 			<div class="weui-form-preview__item">
 				<label class="weui-form-preview__label">人数：</label>
-				<span class="weui-form-preview__value" id="jz-num">5/10人</span>
+				<span class="weui-form-preview__value" id="jz-num"></span>
 			</div>
 		</div>
 		<div class="weui-form-preview__hd" style="padding:0;"></div>
 		<div class="weui-form-preview__bd">
 			<div class="weui-form-preview__item">
 				<label class="weui-form-preview__label">工作日期：</label>
-				<span class="weui-form-preview__value" id="jz-date">2017-05-01至2017-05-32</span>
+				<span class="weui-form-preview__value" id="jz-date"></span>
 			</div>
 			<div class="weui-form-preview__item">
 				<label class="weui-form-preview__label">工作时间：</label>
-				<span class="weui-form-preview__value" id="jz-time">8:00到21:00</span>
+				<span class="weui-form-preview__value" id="jz-time"></span>
 			</div>
 			<div class="weui-form-preview__item">
 				<label class="weui-form-preview__label">详细地址：</label>
-				<span class="weui-form-preview__value" id="jz-local">江宁区佛城西路8号</span>
+				<span class="weui-form-preview__value" id="jz-local"></span>
 			</div>
 			<div class="weui-form-preview__item">
 				<label class="weui-form-preview__label">联系人员：</label>
@@ -83,6 +83,7 @@
 		</div>
 	</div>
 <div style="display:none;">
+<div id="jid_bak"></div>
 </div>	
 <script src="static/js/jquery-2.1.4.js"></script>
 <script src="static/js/fastclick.js"></script>
@@ -93,6 +94,7 @@
 </script>
 <script>
 getItem();
+getStatu();
 </script>
 </body>
 </html>

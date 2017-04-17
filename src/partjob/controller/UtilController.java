@@ -44,13 +44,8 @@ public class UtilController {
 	
 	@RequestMapping("sendCode")
 	@ResponseBody
-	public String sendCode(String phone){
-		Random random = new Random();
-		String code = "";
-		for(int i=0;i<6;i++){
-			code += random.nextInt(9);
-		}
-		return code;
+	public int sendCode(String phone){
+		return 0;
 	}
 	
 

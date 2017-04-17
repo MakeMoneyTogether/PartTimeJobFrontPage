@@ -1,4 +1,5 @@
 uid_bak = $('#uid_bak');
+inv_bak=$('#invitation_bak');
 function jump(p,e){
 	if(p < 4){
 		$('.jz__div_active').removeClass('jz__div_active');
@@ -28,6 +29,11 @@ function jump(p,e){
 			break;
 		case 6:
 			console.log("邀请好友");
+			$.alert();
+			$.modal({
+				title: '邀请码',
+				text: inv_bak.html(),
+			});
 			break;
 		case 7:
 			console.log("退出登录");
@@ -83,9 +89,7 @@ function repwd(){
 		success: function(data){
 			console.log(data);
 			if(data == 0){
-				$.notification({
-					text: '修改密码成功',
-				});
+				$.toast('修改密码成功');
 				$.closePopup()
 				$.cookie('password',npwd,{expires:30,path:'/'});
 				$('#npwd').val('');

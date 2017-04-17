@@ -46,9 +46,8 @@ public class UserController {
 	
 	@RequestMapping("register")
 	@ResponseBody
-	public int register(String phone,String pwd,String phone,String invitation){
+	public int register(String phone,String pwd,String invitation){
 		System.out.println("---------register-------");
-		System.out.println(phone);
 		System.out.println(pwd);
 		System.out.println(phone);
 		System.out.println(invitation);
