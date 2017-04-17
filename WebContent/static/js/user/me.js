@@ -29,6 +29,12 @@ function jump(p,e){
 		case 6:
 			console.log("邀请好友");
 			break;
+		case 7:
+			console.log("退出登录");
+			$.removeCookie('loginId',{path:'/'});
+			$.removeCookie('password',{path:'/'});
+			window.location.href="user";
+			break;
 	}
 }
 function loading_tag(){

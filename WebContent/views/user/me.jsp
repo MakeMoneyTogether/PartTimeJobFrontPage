@@ -89,6 +89,16 @@
 			<div class="weui-cell__ft">
 			</div>
 		</div>
+		<div class="weui-cell weui-cell_access" onclick="jump(7);">
+			<div class="weui-cell__hd">
+				<i class="fa fa-sign-out"></i>
+			</div>
+			<div class="weui-cell__bd">
+				<p style="margin-left:10%;">退出登录</p>
+			</div>
+			<div class="weui-cell__ft">
+			</div>
+		</div>
 	</div>
 	<div class="weui-panel weui-panel_access">
 		
