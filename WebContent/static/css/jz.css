@@ -88,3 +88,6 @@
 .div_right{
 	float:right;
 }
+.icon-only > i{	/*针对日历左右选择按钮做的调整*/
+	margin-top:30%;
+}

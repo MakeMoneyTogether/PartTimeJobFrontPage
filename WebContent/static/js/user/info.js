@@ -33,6 +33,7 @@ function genBtn(code){
 	switch(code){
 		case 0:
 			opBtn.attr('onclick','apply();');
+			opBtn.html('报名');
 			break;
 		case 1:
 			opBtn.html('已报名');
@@ -50,24 +51,35 @@ function genBtn(code){
 }
 
 function apply(){
-	var jid = jid_bak.html();
-	var phone = $.cookie('phone');
-	$.get('jzurl/pages/apply/'+phone+'/'+jid,function(data){
-		data = JSON.parse(data);
-		$('#jz-num').html(data.applied+'/'+data.all+'人');
-		if(data.code == 0){
-			$.toast('报名成功');
-			opBtn.addClass('weui-btn_disabled');
-			opBtn.html('已报名');
-		}
-		if(data.code == 1){
-			$.toast('报名失败，人数已满','cancel');
-		}
-		if(data.code == 2){
-			$.toast('报名失败，余额不足','forbidden');
-		}
-		if(data.code == 3){
-			$.toast('报名失败，时段重复','forbidden');
+	
+	$.confirm({
+		title:'通知',
+		text:'<strong>报名需要支付两元押金，在您完成考勤后会返还，如果缺勤或者中途离开会被扣除押金 同时无法获取到薪水，报名请慎重考虑!!</strong>',
+		onOK:function(){
+			var jid = jid_bak.html();
+			var phone = $.cookie('phone');
+			$.get('jzurl/pages/apply/'+phone+'/'+jid,function(data){
+				data = JSON.parse(data);
+				$('#jz-num').html(data.applied+'/'+data.all+'人');
+				if(data.code == 0){
+					$.toast('报名成功');
+					opBtn.addClass('weui-btn_disabled');
+					opBtn.html('已报名');
+					$.alert('当你临时有事是请提前致电商家，请求商家拒绝你的申请，这一点很重要！！！。');
+				}
+				if(data.code == 1){
+					$.toast('报名失败，人数已满','cancel');
+				}
+				if(data.code == 2){
+					$.toast('报名失败，余额不足','forbidden');
+				}
+				if(data.code == 3){
+					$.toast('报名失败，时段重复','forbidden');
+				}
+			});
+		},
+		onCancel:function(){
+			return;
 		}
 	});
 }

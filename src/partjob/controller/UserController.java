@@ -1,5 +1,9 @@
 package partjob.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import org.springframework.stereotype.Controller;
@@ -68,5 +72,48 @@ public class UserController {
 		System.out.println(pwd);
 		System.out.println(npwd);
 		return 0;
+	}
+	@RequestMapping("invitation")
+	@ResponseBody
+	public List<Map<String, String>> invitation(String phone){
+		List<Map<String, String>> res = new ArrayList<Map<String,String>>();
+
+		Random random = new Random();
+		int n = random.nextInt(5)+3;
+		for(int i=0;i<n;i++){
+			Map<String, String> map = new HashMap<String, String>();
+			map.put("name", names[random.nextInt(names.length)]);
+			map.put("statu", random.nextInt(2)+"");
+			res.add(map);
+		}
+		return res;
+	}
+	
+	@RequestMapping("cash")
+	@ResponseBody
+	public int cash(String phone,double rmb){
+		System.out.println(phone);
+		System.out.println(rmb);
+		Random random = new Random();
+		return random.nextInt(3);
+		
+	}
+	
+	@RequestMapping("schedule")
+	@ResponseBody
+	public List<Map<String,Integer>> schedule(String phone){
+		System.out.println(phone);
+		List<Map<String,Integer>> res = new ArrayList<Map<String,Integer>>();
+
+		Random random = new Random();
+		int n = random.nextInt(5)+3;
+		for(int i=0;i<n;i++){
+			Map<String, Integer> map = new HashMap<String, Integer>();
+			map.put("rmb", 10+random.nextInt(100));
+			map.put("statu", random.nextInt(3));
+			res.add(map);
+		}
+		return res;
+		
 	}
 }

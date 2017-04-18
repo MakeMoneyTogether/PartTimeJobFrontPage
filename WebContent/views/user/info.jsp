@@ -29,7 +29,7 @@
 			<div class="weui-form-preview__item">
 				<label class="weui-form-preview__label"></label>
 				<span class="weui-form-preview__value" id="jz-name"></span>
-				<button id="opBtn" class="weui-btn weui-btn_mini weui-btn_primary">报名</button>
+				<button id="opBtn" class="weui-btn weui-btn_mini weui-btn_primary"></button>
 			</div>
 		</div>
 		<div class="weui-form-preview__bd">
@@ -82,6 +82,7 @@
 			</div>
 		</div>
 	</div>
+</div>
 <div style="display:none;">
 <div id="jid_bak"></div>
 </div>	

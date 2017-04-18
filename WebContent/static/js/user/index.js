@@ -172,7 +172,7 @@ function freshList(){
 }
 function localset(){
 	var t_cityCode = $.cookie('citycode');
-	if(t_cityCode.length > 5){
+	if(t_cityCode !=null&& t_cityCode.length > 5){
 		ncity.attr('value',t_cityCode);
 		ncity.html($.cookie('cityname'));
 	}else{

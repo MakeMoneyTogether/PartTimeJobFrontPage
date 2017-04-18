@@ -89,3 +89,19 @@
 - url:	`jzurl/pages/apply/{phone}/{jid}`
 - 输入参数:	${phone}手机号码,${jid}兼职id
 - 输出参数: json格式的数据{code:${codeId},applied:${applied},all:${all}} (code表示功能码，具体查询功能码表，applied表示已经报名的人数，all表示需求总人数)
+
+### 获取用户邀请的人和状态
+- url:	`uurl/invitation`
+- 表单域1:	phone手机号码
+- 输出参数:	json格式的数据[{name:${name},statu:${statu}}](name表示被邀请人的姓名，statu表示是否完成了一次兼职0表示没有，1表示完成了，参考功能码表)
+
+### 用户提现
+- url:	`uurl/cash`
+- 表单域1:	phone手机号码
+- 表单域2:	rmb提现金额
+- 输出参数:	1个数字(0,1,2分别表示，成功，余额不足，提现失败)
+
+### 获取用户提现交易单
+- url:	`uurl/schedule`
+- 表单域1:	phone手机号码
+- 输出参数:	json格式的数据[{rmb:${name},statu:${statu}}](rmb表示提现金额，statu表示提现状态，0表示以提现成功，1表示正在处理中，2表示平台拒绝，参考功能码表)

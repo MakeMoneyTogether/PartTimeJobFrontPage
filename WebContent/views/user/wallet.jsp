@@ -35,11 +35,42 @@
 				<span style="margin-left:5%;float:left;" id="money_freeze">2.0</span>
 			</div>
 			<div class="col-20 div_right" style="padding-top:5%;">
-				<button class="weui-btn weui-btn_mini weui-btn_primary">提现</button>
+				<button class="weui-btn weui-btn_mini weui-btn_primary" onclick="cash();">提现</button>
 			</div>
 			<div style="clear:both"></div>
 		</div>
-
+		<div class="weui-panel weui-panel_access">
+			<div class="weui-panel__hd">已邀请</div>
+			<div id="inv_person">
+				<div class="weui-cell weui-cell_access">
+					<div class="weui-cell__hd">
+						<i class="fa fa-twitter"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p style="margin-left:10%;">张三</p>
+					</div>
+					<div class="">
+						+5.00
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="weui-panel weui-panel_access">
+			<div class="weui-panel__hd">提现进度</div>
+			<div id="schedule">
+				<div class="weui-cell weui-cell_access">
+					<div class="weui-cell__hd">
+						<i class="fa fa-twitter"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p style="margin-left:10%;">张三</p>
+					</div>
+					<div class="">
+						+5.00
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 <div style="display:none;">
 </div>	
@@ -47,10 +78,12 @@
 <script src="static/js/fastclick.js"></script>
 <script src="static/js/jquery-weui.min.js"></script>
 <script src="static/js/jquery.cookie.js"></script>
-<script src="static/js/user/register.js"></script>
+<script src="static/js/user/wallet.js"></script>
 <script type="text/javascript">
 </script>
 <script>
+getInvitation();
+getSchedule();
 </script>
 </body>
 </html>

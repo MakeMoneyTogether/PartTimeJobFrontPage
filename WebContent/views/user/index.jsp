@@ -99,7 +99,7 @@
 				<div class="weui-cell">
 					<div class="weui-cell__hd"><label for="" class="weui-label">兼职日期</label></div>
 					<div class="weui-cell__bd">
-						<input id="jzstdate" class="weui-input" style="background:#bdbdbd;" type="date" value="">
+						<input id="jzstdate" class="weui-input" style="background:#bdbdbd;" type="text" data-toggle="date">
 					</div>
 				</div>
 				<br>
@@ -169,6 +169,8 @@
 	$("#city-picker").cityPicker({
 		showDistrict: false
 	});
+	$('#jzstdate').calendar();
+	
 	//$.cookie('citycode','320100',{expires:30,path:'/'});
 	function searchText(){
 		$.cookie('inputKey',$('#searchInput').val());
