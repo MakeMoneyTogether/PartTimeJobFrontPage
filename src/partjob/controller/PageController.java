@@ -19,6 +19,11 @@ public class PageController {
 	public String user(){
 		return "user/index";
 	}
+
+	@RequestMapping("user/net")
+	public String net(){
+		return "user/net";
+	}
 	
 	@RequestMapping("test")
 	public String test(){

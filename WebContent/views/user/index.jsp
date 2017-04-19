@@ -55,7 +55,9 @@
 				</div>
 				<hr width="1" color="#999999">
 				<div class="weui-flex__item placeselect">
+					<a href="user/net">
 					<i style="color:#010101;" class="fa fa-mobile-phone"></i>  手机兼职
+					</a>
 				</div>
 			</div>
 		</div>
