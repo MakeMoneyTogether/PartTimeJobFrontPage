@@ -37,6 +37,10 @@ public class PageController {
 	public String info(){
 		return "user/info";
 	}
+	@RequestMapping("user/netinfo/{jid}")
+	public String netinfo(){
+		return "user/netinfo";
+	}
 	
 	@RequestMapping("user/me")
 	public String me(){

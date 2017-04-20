@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import partjob.entity.JZNet;
 import partjob.entity.User;
 
 import org.springframework.stereotype.Controller;
@@ -127,6 +128,33 @@ public class JZController {
 			res.put("all", all);
 		}
 		return res;
+	}
+	
+	@ResponseBody
+	@RequestMapping("pages/net/{offset}/{length}")
+	public List<JZNet> netJZ(@PathVariable int offset,@PathVariable int length){
+		String labelsall[] = {"体验","互动","分享","其他"};
+		String jznames[] = {"限时推荐《主宰苍穹（付费）》","限时推荐《京东商城》","限时推荐《随手记》","限时推荐《陌陌》","限时推荐《饿了么》","限时推荐《平安普惠》","限时推荐《金博棋牌》"};
+		int jzn = jznames.length;
+		int labeln = labelsall.length;
+		List<JZNet> items = new ArrayList<JZNet>();
+		Random random = new Random();
+		for(int i=0;i<length;i++){
+			items.add(new JZNet(random.nextInt(100000), jznames[random.nextInt(jzn)], labelsall[random.nextInt(labeln)], "2017-05-01", 15.0));
+		}
+		return items;
+	}
+	
+	@ResponseBody
+	@RequestMapping("pages/netitem/{jid}")
+	public JZNet netItem(@PathVariable int jid){
+		String labelsall[] = {"体验","互动","分享","其他"};
+		String jznames[] = {"限时推荐《主宰苍穹（付费）》","限时推荐《京东商城》","限时推荐《随手记》","限时推荐《陌陌》","限时推荐《饿了么》","限时推荐《平安普惠》","限时推荐《金博棋牌》"};
+		int jzn = jznames.length;
+		int labeln = labelsall.length;
+		Random random = new Random();
+		JZNet jzNet = new JZNet(random.nextInt(100000), jznames[random.nextInt(jzn)], labelsall[random.nextInt(labeln)], "2017-05-01", 15.0);
+		return jzNet;
 	}
 
 }
