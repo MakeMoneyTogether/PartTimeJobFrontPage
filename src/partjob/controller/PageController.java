@@ -3,6 +3,8 @@ package partjob.controller;
 import javax.sound.midi.MidiDevice.Info;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -75,7 +77,12 @@ public class PageController {
 	}
 	
 	//商家端
+	@RequestMapping("mer")
 	public String mer(){
 		return "mer/index";
+	}
+	@RequestMapping("mer/{page}")
+	public String merto(@PathVariable String page){
+		return "mer/"+page;
 	}
 }

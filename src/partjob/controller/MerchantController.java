@@ -19,4 +19,12 @@ public class MerchantController {
 		res.put("moneyice", 200.00);
 		return res;
 	}
+	@RequestMapping("update")
+	@ResponseBody
+	public int update(String citycode){
+		System.out.println("citycode == null? "+citycode == null);
+		if(citycode == null)
+			return 0;
+		return 1;
+	}
 }

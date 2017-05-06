@@ -120,7 +120,7 @@
 		<a class="weui-btn weui-btn_mini weui-btn_default close-popup" style="width:80%;">返回</a>
 	</div>
 	<div class="weui-flex__item" style="padding:5%;">
-		<a class="weui-btn weui-btn_mini weui-btn_primary" style="width:80%;">修改</a>
+		<a onclick="repwd();" class="weui-btn weui-btn_mini weui-btn_primary" style="width:80%;">修改</a>
 	</div>
 </div>
 </div>
