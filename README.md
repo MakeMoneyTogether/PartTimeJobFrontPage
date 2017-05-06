@@ -115,3 +115,10 @@
 - url:	`jzurl/pages/netitem/{jid}`
 - 输入参数:	${jid}兼职id
 - 输出参数: 手机兼职详情
+
+## 商户界面接口
+### 获取商户信息
+- url: `merurl/json/me`
+- 表单域1:	phone商家手机
+- 表单域2:	password商家密码
+- 输出参数:	商家基本信息{商家名称,可用资产,冻结资产}

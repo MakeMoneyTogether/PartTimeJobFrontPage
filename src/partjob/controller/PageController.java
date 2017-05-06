@@ -12,7 +12,7 @@ public class PageController {
 
 	@RequestMapping("/")
 	public String index(){
-		return "user/index";
+		return "mer/index";
 	}
 	
 	@RequestMapping("user")
@@ -72,5 +72,10 @@ public class PageController {
 	public String restful(){
 		String res = "success";
 		return res;
+	}
+	
+	//商家端
+	public String mer(){
+		return "mer/index";
 	}
 }
