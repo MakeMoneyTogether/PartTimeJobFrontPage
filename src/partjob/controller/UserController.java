@@ -22,6 +22,9 @@ public class UserController {
 	public int login(String phone,String password){
 		System.out.println("phone = "+phone);
 		System.out.println("password = "+password);
+		if(password == null){
+			return 1;
+		}
 		return 0;
 	}
 	

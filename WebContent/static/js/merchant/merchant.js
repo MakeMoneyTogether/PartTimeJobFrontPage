@@ -22,3 +22,40 @@ function jump(k){
 			window.location.href='mer/login';
 	}
 }
+function merlogin(){
+	phone = $('#phone').val();
+	pwd = $('#password').val();
+	
+	$.ajax({
+		type:'POST',
+		url: 'uurl/pages/login',
+		dataType:'json',
+		data:{phone:phone,password:pwd},
+		success: function(data){
+			if(data == 1){
+				$.alert('登录名或密码错误！！');
+			}
+			if(data == 0){
+				$.cookie('phone',phone,{expires:30,path:'/'});
+				$.cookie('password',pwd,{expires:30,path:'/'});
+				window.location.href='mer/index';
+			}
+		}
+	});
+}
+function mercheck(){
+	phone = $.cookie('phone');
+	pwd = $.cookie('password');
+	
+	$.ajax({
+		type:'POST',
+		url: 'uurl/pages/login',
+		dataType:'json',
+		data:{phone:phone,password:pwd},
+		success: function(data){
+			if(data == 1){
+				window.location.href='mer/login';
+			}
+		}
+	});
+}

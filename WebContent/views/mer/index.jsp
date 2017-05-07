@@ -138,13 +138,8 @@
 	$(function() {
 		FastClick.attach(document.body);
 	});
-	
-	//$.cookie('citycode','320100',{expires:30,path:'/'});
-//	function searchText(){
-//		$.cookie('inputKey',$('#searchInput').val());
-//		window.location.href = 'user/list';
-//	}
-getMeInfo();
+	mercheck();
+	getMeInfo();
 </script>
 </body>
 </html>
