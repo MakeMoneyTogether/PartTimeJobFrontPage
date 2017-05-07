@@ -1,5 +1,17 @@
 function init(){
-	
+	phone = $.cookie('phone');
+	$.ajax({
+		type:'POST',
+		url: 'merurl/json/merme',
+		dataType:'json',
+		data:{phone:phone},
+		success: function(data){
+			mname = $('#mname').val(data.mname);
+			local = $('#local').val(data.local);
+			connectname = $('#connectname').val(data.connectname);
+			phone = $('#phone').val(data.phone);
+		}
+	});
 }
 function editLocal(){
 	$("#city-picker").attr('disabled',false);

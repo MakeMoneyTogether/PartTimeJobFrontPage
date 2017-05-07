@@ -86,6 +86,7 @@
 	$(function() {
 		FastClick.attach(document.body);
 	});
+	init();
 </script>
 </body>
 </html>
