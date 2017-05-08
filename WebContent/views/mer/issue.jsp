@@ -39,7 +39,7 @@
 		<div class="weui-cell">
 			<div class="weui-cell__hd"><label class="weui-label">兼职名称</label></div>
 			<div class="weui-cell__bd">
-				<input id="name" class="weui-input" type="text" placeholder="请输入兼职名称">
+				<input id="jzname" class="weui-input" type="text" placeholder="请输入兼职名称">
 			</div>
 		</div>
 		<div class="weui-cell weui-cell_select weui-cell_select-after">
@@ -55,75 +55,75 @@
 		<div class="weui-cell weui-cell_select weui-cell_select-after">
 			<div class="weui-cell__hd"><label class="weui-label">薪资待遇</label></div>
 			<div class="col-70">
-				<input id="name" class="weui-input" type="text" placeholder="单位时间薪水">
+				<input id="salary" class="weui-input" type="text" placeholder="单位时间薪水">
 			</div>
 			<div class="col-30">
-				<select id="jzlabel" name="jzlabel" class="weui-select">
-					<option value="1">/天</option>
-					<option value="2">/小时</option>
+				<select id="unit" name="unit" class="weui-select" onchange="change(this.options[this.options.selectedIndex].value);">
+					<option value="day">/天</option>
+					<option value="hour">/小时</option>
 				</select>
 			</div>
 		</div>
-		<div class="weui-cell">
+		<div id="for_hour" style="display:none;" class="weui-cell">
 			<div class="weui-cell__hd"><label class="weui-label">工作强度</label></div>
 			<div class="weui-cell__bd">
-				<input id="name" class="weui-input" type="text" placeholder="平均一天工作多少小时">
+				<input id="hourOfDay" class="weui-input" type="text" placeholder="平均一天工作多少小时">
 			</div>
 			小时/天
 		</div>
 		<div class="weui-cell">
 			<div class="weui-cell__hd"><label class="weui-label">开始时间</label></div>
 			<div class="weui-cell__bd">
-				<input id="name" class="weui-input" type="date" placeholder="请选择时间">
+				<input id="stdate" class="weui-input" type="date" placeholder="请选择时间">
 			</div>
 		</div>
 		<div class="weui-cell">
 			<div class="weui-cell__hd"><label class="weui-label">结束时间</label></div>
 			<div class="weui-cell__bd">
-				<input id="name" class="weui-input" type="date" >
+				<input id="endate" class="weui-input" type="date" >
 			</div>
 		</div>
 		<div class="weui-cell">
 			<div class="weui-cell__hd"><label class="weui-label">报名时间</label></div>
 			<div class="weui-cell__bd">
-				<input id="name" class="weui-input" type="date" >
+				<input id="pausedate" class="weui-input" type="date" >
 			</div>
 				前
 		</div>
 		<div class="weui-cell">
 			<div class="weui-cell__hd"><label class="weui-label">需求人数</label></div>
 			<div class="weui-cell__bd">
-				<input id="name" class="weui-input" type="text" placeholder="请输入需求人数">
+				<input id="jznum" class="weui-input" type="text" placeholder="请输入需求人数">
 			</div>
 		</div>
 		<div class="weui-cell">
 			<div class="weui-cell__hd"><label class="weui-label">兼职地点</label></div>
 			<div class="weui-cell__bd">
-				<input id="name" class="weui-input" type="text" placeholder="请输入兼职地点">
+				<input id="jzlocal" class="weui-input" type="text" placeholder="请输入兼职地点">
 			</div>
 		</div>
 		<hr>
 		<div class="weui-cell">
 			<div class="weui-cell__hd"><label class="weui-label">联系人姓名</label></div>
 			<div class="weui-cell__bd">
-				<input id="name" class="weui-input" type="text" placeholder="请输入联系人姓名">
+				<input id="connectName" class="weui-input" type="text" placeholder="请输入联系人姓名">
 			</div>
 		</div>
 		<div class="weui-cell">
 			<div class="weui-cell__hd"><label class="weui-label">联系人电话</label></div>
 			<div class="weui-cell__bd">
-				<input id="name" class="weui-input" type="text" placeholder="请输入联系人电话">
+				<input id="connectPhone" class="weui-input" type="text" placeholder="请输入联系人电话">
 			</div>
 		</div>
 		<hr>
 		<div class="weui-cells__title">兼职描述</div>
 		<div class="weui-cell">
 			<div class="weui-cell__bd">
-				<textarea class="weui-textarea" placeholder="请输入文本" rows="6"></textarea>
+				<textarea id="jzdes" class="weui-textarea" placeholder="请输入文本" rows="6"></textarea>
 			</div>
 		</div>
 		<div class="weui-btn-area">
-		<button style="width:80%;" class="weui-btn weui-btn_primary">发布</button>
+		<button onclick="check();" style="width:80%;" class="weui-btn weui-btn_primary">发布</button>
 		</div>
 	</div>
 </div>
@@ -135,6 +135,7 @@
 <script src="static/js/jquery-weui.min.js"></script>
 <script src="static/js/jquery.cookie.js"></script>
 <script src="static/js/merchant/merchant.js"></script>
+<script src="static/js/merchant/issue.js"></script>
 <script>
 	$(function() {
 		FastClick.attach(document.body);

@@ -37,10 +37,33 @@ function cash(){
 		input: '100.0',
 		empty: false, // 是否允许为空
 		onOK: function (input) {
-			//点击确认
+			postCash(input);
 		},
 		onCancel: function () {
 			//点击取消
+		}
+	});
+}
+function postCash(rmb){
+	if(!rmb.match(/^(\d)+\.(\d)$/)){
+		$.alert('请输入数字');
+		return;
+	}
+	phone = $.cookie('phone');
+	$.ajax({
+		type:'POST',
+		url: 'uurl/cash',
+		dataType:'json',
+		data:{phone:phone,rmb:rmb},
+		success: function(data){
+			if(data == 0){
+				$.toast('已提交申请');
+				init();
+			}else if(data == 1){
+				$.toast('余额不足','forbidden');
+			}else if(data == 2){
+				$.toast('操作失败，请稍后重试','forbidden');
+			}
 		}
 	});
 }

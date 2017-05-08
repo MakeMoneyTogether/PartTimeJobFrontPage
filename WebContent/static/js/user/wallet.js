@@ -6,6 +6,10 @@ function cash(){
 }
 
 function postCash(rmb){
+	if(!rmb.match(/^(\d)+\.(\d)$/)){
+		$.alert('请输入数字');
+		return;
+	}
 	phone = $.cookie('phone');
 	$.ajax({
 		type:'POST',
