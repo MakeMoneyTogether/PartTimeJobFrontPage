@@ -45,17 +45,7 @@
 <div class="weui-cells" style="margin-top:0;">
 	<div class="weui-cells__title">提现进度</div>
 	<div id="out_moneys">
-	<div class="weui-cell">
-		<div class="weui-cell__hd">
-			<i class="fa fa-euro"></i>
-		</div>
-		<div class="weui-cell__bd">
-			<p style="margin-left:10%;">提现 200.0</p>
-		</div>
-		<div class="weui-cell__ft">
-			<i class="weui-icon-waiting"></i>
-		</div>
-	</div>
+	
 	</div>
 	
 </div>

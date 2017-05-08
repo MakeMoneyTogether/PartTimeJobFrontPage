@@ -123,13 +123,13 @@
 - 输出参数:	一个数字(0:验证成功;1:退出难道还有错？)
 
 ### 获取商户主页信息
-- url: `merurl/json/me`
+- url:	`merurl/json/me`
 - 表单域1:	phone商家手机
 - 表单域2:	password商家密码
 - 输出参数:	商家基本信息{商家名称,可用资产,冻结资产}
 
 ### 修改商户信息
-- url: `merurl/json/update`
+- url:	`merurl/json/update`
 - 表单域1:	mname商户名称
 - 表单域2:	citycode商户所在城市代码（可为空）
 - 表单域3:	local商户详细地址
@@ -139,6 +139,11 @@
 - 输出参数:	一个数字，0表示成功。
 
 ### 获取商户所有信息
-- url: `merurl/json/merme`
+- url:	`merurl/json/merme`
 - 表单域1:	phone商家手机
 - 输出参数:	商家所有信息{mname:商户名称,local:详细地址,connectname:法人姓名,phone:法人电话}
+
+### 获取商户提现列表
+- url:	`merurl/json/schedule`
+- 表单域1:	phone商家手机
+- 输出参数:	商户提现信息列表单个元素格式如下{"id":交易流水号,"money":提现金额,"statu":提现状态}，提现状态0为等待，1为拒绝，2为成功
