@@ -19,7 +19,7 @@ function jump(k){
 			$('#repass').popup();
 			break;
 		case 7:
-			window.location.href='mer/login';
+			logout();
 	}
 }
 function merlogin(){
@@ -58,4 +58,21 @@ function mercheck(){
 			}
 		}
 	});
+}
+function logout(){
+	phone = $.cookie('phone');
+	$.ajax({
+		type:'POST',
+		url: 'uurl/pages/logout',
+		dataType:'json',
+		data:{phone:phone},
+		success: function(data){
+			$.removeCookie('phone',{path:'/'})
+			$.removeCookie('password',{path:'/'})
+			window.location.href='mer/login';
+		}
+	});
+	$.removeCookie('phone',{path:'/'})
+	$.removeCookie('password',{path:'/'})
+	window.location.href='mer/login';
 }
