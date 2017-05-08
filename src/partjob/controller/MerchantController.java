@@ -63,4 +63,14 @@ public class MerchantController {
 		}
 		return res;
 	}
+	
+	@RequestMapping("issue")
+	@ResponseBody
+	public int issue(String hourOfDay){
+		System.out.println("hourOfDay = "+hourOfDay);
+		if(hourOfDay == hourOfDay){
+			return 1;
+		}
+		return 10086;
+	}
 }

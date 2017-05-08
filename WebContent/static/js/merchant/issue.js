@@ -10,6 +10,12 @@ function change(value){
 	}
 }
 function check(){
+	jzname = $('#jzname').val();
+	if(jzname == ''){
+		$.alert('请输入兼职名');
+		return;
+	}
+	
 	salary = $('#salary').val();
 	if(!salary.match(/^(\d)+(\.(\d)+)?$/)){
 		$.alert('请输入正确的薪水');
@@ -38,12 +44,12 @@ function check(){
 		return;
 	}
 	
-	connectName = $('#connectName');
+	connectName = $('#connectName').val();
 	if(connectName == ''){
 		$.alert('请输入联系人姓名');
 		return;
 	}
-	connectPhone = $('#connectPhone');
+	connectPhone = $('#connectPhone').val();
 	if(connectPhone.match(/^(1\d{10})$/)){
 		$.alert('请输入正确的手机号码');
 		return;
@@ -59,11 +65,16 @@ function check(){
 function issue(data){
 	$.ajax({
 		type:'POST',
-		url: 'mer/json/issue',
+		url: 'merurl/json/issue',
 		dataType:'json',
 		data:data,
 		success: function(data){
-			window.location.href='mer/me';
+			if(data.length > 1){
+				window.location.href='mer/index';
+			}else{
+				$.alert('余额不足');
+			}
+			
 		}
 	});
 }
