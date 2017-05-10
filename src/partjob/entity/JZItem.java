@@ -8,6 +8,7 @@ public class JZItem {
 	String jstdate;
 	String jmoney;
 	String jtime;
+	int jstatu;
 	public JZItem(int jid,String jname,String jlabel,String jlocal,String jstdate,String jmoney,String jtime){
 		this.jid = jid;
 		this.jname = jname;
@@ -61,6 +62,14 @@ public class JZItem {
 	}
 	public void setJtime(String jtime) {
 		this.jtime = jtime;
+	}
+
+	public int getJstatu() {
+		return jstatu;
+	}
+
+	public void setJstatu(int jstatu) {
+		this.jstatu = jstatu;
 	}
 	
 }
