@@ -90,7 +90,7 @@
 - 输入参数:	${phone}手机号码,${jid}兼职id
 - 输出参数: json格式的数据{code:${codeId},applied:${applied},all:${all}} (code表示功能码，具体查询功能码表，applied表示已经报名的人数，all表示需求总人数)
 
-### 获取用户邀请的人和状态
+### 获取用户邀请的人和状态(初步实现，后台功能已测试)
 - url:	`uurl/invitation`
 - 表单域1:	phone手机号码
 - 输出参数:	json格式的数据[{name:${name},statu:${statu}}](name表示被邀请人的姓名，statu表示是否完成了一次兼职0表示没有，1表示完成了，参考功能码表)
